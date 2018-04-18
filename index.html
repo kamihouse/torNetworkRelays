@@ -14,7 +14,7 @@
     height: 100%;
   }
   body {
-    height:98%;
+    height:97%;
     padding: 0;
     margin: 0;
     font-family: 'Noto Sans', sans-serif;
@@ -22,8 +22,9 @@
   }
   #mapaMundial {
     width: 100%;
-    height: 90%;
-    color: #555;
+    height: 92%;
+    color: #888;
+    text-align: center;
   }
   .center{
     text-align: center;
@@ -35,7 +36,7 @@
   </style>
 </head>
 <body>
-  <p class="center"><strong>Tor Project (Network Relays)</strong> | <a href="http://coderi.com.br/2018/04/01/fluxo-de-trafego-na-rede-tor/">Coderi : Inteligência Empresarial</a> + <a href="http://blutmagie.de/index.php?SR=CountryCode&SO=Asc">Blutmagie</a> | 17/04/2018</p>
+  <p class="center"><strong>Tor Project (Network Relays)</strong> | <a href="http://coderi.com.br/2018/04/01/fluxo-de-trafego-na-rede-tor/">Coderi : Inteligência Empresarial</a> + <a href="http://blutmagie.de/index.php?SR=CountryCode&SO=Asc">Blutmagie</a> | <span id="date">...</span></p>
   <div id="mapaMundial"></div>
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -45,6 +46,12 @@
   var idMapa = '#mapaMundial';
 
   $(function(){
+    $.get('torNodesDate.json', function(result){
+      if(result){
+        $('#date').text(result.date);
+      }
+    });
+
     $.get('torNodes.json', function(result){
       if(result){
         var gdpData = result;
@@ -80,7 +87,7 @@
         });
       }
     }).fail(function(){
-      $(idMapa).text('Não foi possível carregar os dados.\nExecute o script "exportDataToJson.sh" para efetuar a importação.');
+      $(idMapa).text('Não foi possível processar os dados... Execute o script "./exportDataToJson.sh" para efetuar a importação e atualize a página.');
     });
   });
 </script>

@@ -8,3 +8,4 @@ done < <(curl -s http://blutmagie.de/query_export.php/Tor_query_EXPORT.csv | cut
 json="${json:0:-1}}"
 
 echo "$json" > torNodes.json
+echo "{\"date\": \"$(date +%F)\"}" > torNodesDate.json

@@ -22,8 +22,6 @@ Counting and Grouping (decreasing):
 ### Sources & Technology
 * Tor Project - https://www.torproject.org
 * Blutmagie - http://blutmagie.de/
-
-
 * JQuery - https://jquery.com
 * JVectorMap - http://jvectormap.com
 * Node & NPM - https://nodejs.org
