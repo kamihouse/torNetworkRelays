@@ -15,3 +15,7 @@ CSV Data: http://blutmagie.de/query_export.php/Tor_query_EXPORT.csv
 * JQuery - https://jquery.com
 * JVectorMap - http://jvectormap.com
 * Node & NPM - https://nodejs.org
+
+### Sample screen
+
+![Sample](images/sample.png)
