@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>The Onion Router - Coderi : Inteligência Empresarial</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.3/jquery-jvectormap.min.css">
+
+  <style>
+  html {
+    height: 100%;
+  }
+  body {
+    height:98%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    color: #333;
+  }
+  #mapaMundial {
+    width: 100%;
+    height: 90%;
+  }
+  .center{
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    color: #28b67a;
+  }
+  </style>
+</head>
+<body>
+  <p class="center"><strong>Tor Project (Network Relays)</strong> | <a href="http://coderi.com.br/2018/04/01/fluxo-de-trafego-na-rede-tor/">Coderi : Inteligência Empresarial</a> + <a href="http://blutmagie.de/index.php?SR=CountryCode&SO=Asc">Blutmagie</a> | 17/04/2018</p>
+  <div id="mapaMundial"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="http://jvectormap.com/js/jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
+  <script>
+  $(function(){
+    var gdpData = {
+      'N/A': 7,'A1': 3,'AL': 5,'AM': 1,'AR': 17,'AT': 59,'AU': 64,'BD': 1,'BE': 24,
+      'BG': 72,'BR': 33,'BY': 1,'CA': 243,'CH': 149,'CI': 1,'CL': 4,'CN': 3,'CO': 2,
+      'CR': 9,'CY': 2,'CZ': 87,'DE': 1294,'DK': 49,'DO': 1,'DZ': 1,'EC': 1,'EE': 7,
+      'ES': 47,'EU': 9,'FI': 79,'FR': 818,'GB': 232,'GR': 23,'HK': 15,'HR': 4,
+      'HU': 40,'ID': 9,'IE': 18,'IL': 9,'IM': 1,'IN': 41,'IR': 7,'IS': 18,'IT': 78,
+      'JP': 67,'KE': 1,'KG': 3,'KN': 2,'KR': 9,'LR': 1,'LT': 26,'LU': 13,'LV': 34,
+      'MA': 2,'MD': 55,'MK': 1,'MN': 1,'MO': 1,'MX': 3,'MY': 14,'NL': 491,'NO': 58,
+      'NZ': 9,'PA': 5,'PH': 1,'PL': 78,'PT': 12,'PY': 1,'QA': 1,'RO': 108,'RS': 1,
+      'RU': 262,'SA': 2,'SC': 23,'SE': 177,'SG': 69,'SI': 5,'SK': 13,'TH': 5,'TN': 2,
+      'TR': 10,'TW': 15,'UA': 90,'US': 1113,'UY': 1,'VE': 2,'VN': 5,'ZA': 11
+    };
+
+    $('#mapaMundial').vectorMap({
+      map: 'world_mill',
+      zoomMax: 1,
+      zoomButtons : false,
+      backgroundColor: '#f7f7f7f',
+      series: {
+        regions: [{
+          values: gdpData,
+          scale: ['#badc58', '#64A548'], //Fraco/Forte
+          normalizeFunction: 'polynomial',
+          legend: {
+            horizontal: true
+          }
+        }]
+      },
+      regionStyle: {
+        initial: {
+          fill: '#95afc0'
+        },
+        hover: {
+          fill: "#535c68"
+        }
+      },
+      onRegionTipShow: function(e, el, code){
+        if(gdpData[code]){
+          el.html(el.html()+' <br/>Nº de relays: ' + gdpData[code]);
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
