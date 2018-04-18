@@ -8,6 +8,7 @@ Simplified global mapping (world location) of the **Tor Project** nodes network 
 
 ### Install & Run
 * Install dependencies: `npm install`
+* Export JSON data: `./exportDataToJson.sh`
 * Local server: `npm run serve` - http://127.0.0.1:8080
 
 ### Processing data
@@ -21,3 +22,4 @@ Counting (decreasing): `curl -s  http://blutmagie.de/query_export.php/Tor_query_
 * JQuery - https://jquery.com
 * JVectorMap - http://jvectormap.com
 * Node & NPM - https://nodejs.org
+* ./jq - https://stedolan.github.io/jq/
