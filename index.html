@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <title>The Onion Router - Coderi : Inteligência Empresarial</title>
 
+  <link rel="icon" href="https://www.torproject.org/images/favicon.ico">
+
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.3/jquery-jvectormap.min.css">
+  <link rel="stylesheet" type="text/css" href="node_modules/jvectormap-next/jquery-jvectormap.css">
 
   <style>
   html {
@@ -35,9 +37,9 @@
   <p class="center"><strong>Tor Project (Network Relays)</strong> | <a href="http://coderi.com.br/2018/04/01/fluxo-de-trafego-na-rede-tor/">Coderi : Inteligência Empresarial</a> + <a href="http://blutmagie.de/index.php?SR=CountryCode&SO=Asc">Blutmagie</a> | 17/04/2018</p>
   <div id="mapaMundial"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script src="http://jvectormap.com/js/jquery-jvectormap-2.0.3.min.js"></script>
-  <script src="http://jvectormap.com/js/jquery-jvectormap-world-mill.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/jvectormap-next/jquery-jvectormap.min.js"></script>
+  <script src="node_modules/jvectormap-next/tests/assets/jquery-jvectormap-world-mill-en.js"></script>
   <script>
   $(function(){
     var gdpData = {
@@ -54,7 +56,7 @@
     };
 
     $('#mapaMundial').vectorMap({
-      map: 'world_mill',
+      map: 'world_mill_en',
       zoomMax: 1,
       zoomButtons : false,
       backgroundColor: '#f7f7f7f',
