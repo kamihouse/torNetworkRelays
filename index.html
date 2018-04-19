@@ -47,9 +47,10 @@
   $(function(){
     $.get('torNodes.json', function(result){
       if(result.data && result.date){
-        $('#date').text(result.date);
-
         var gdpData = result.data;
+        var gdpDate = result.date;
+
+        $('#date').text(gdpDate);
 
         $(idMapa).vectorMap({
           map: 'world_mill_en',
@@ -62,7 +63,8 @@
               scale: ['#badc58', '#64A548'], //Fraco-Forte
               normalizeFunction: 'polynomial',
               legend: {
-                horizontal: true
+                title: 'Tor (Network Relays) - ' + gdpDate,
+                vertical: false
               }
             }]
           },
